@@ -1,0 +1,51 @@
+
+// Grant access to Database
+USE cool_tech;
+GO
+
+GRANT CONTROL TO laravel;
+GO
+
+
+// Create table for blog posts
+USE cool_tech;
+GO
+CREATE TABLE blog_posts (
+id INT IDENTITY(1,1) PRIMARY KEY,
+created DATE DEFAULT GETDATE(),
+title TEXT,
+content TEXT,
+category TEXT,
+tags TEXT,
+my_image IMAGE
+);
+GO
+
+//Add data to categories
+USE cool_tech;
+GO
+
+INSERT INTO blog_posts (title, content, category, tags) VALUES ('Hyperion new Website', 'This content is about Hyperion and its progress of their new website', 'Tech news', 'hyperion news studies');
+INSERT INTO blog_posts (title, content, category, tags) VALUES ('New Microsoft release', 'This content is about Microsoft and its new release.', 'Software reviews', 'microsoft software news');
+INSERT INTO blog_posts (title, content, category, tags) VALUES ('Intel new advanced i9', 'This content is about Intels new i9 release', 'Hardware reviews', 'intel hardware computercomponents');
+INSERT INTO blog_posts (title, content, category, tags) VALUES ('Is there a true difference in generations of processors?', 'This content is about different generations of processors', 'Opinion pieces', 'hardware intel computercomponents');
+INSERT INTO blog_posts (title, content, category, tags) VALUES ('Apple releases a new virtual laptop', 'This content is about Apple and its new laptop', 'Tech news', 'hardware software releases');
+GO
+
+
+
+//Create table and add data for categories
+USE cool_tech;
+GO
+
+CREATE TABLE categories (
+id INT IDENTITY(1,1) PRIMARY KEY,
+category TEXT,
+);
+GO
+
+INSERT INTO categories (category) VALUES ('Tech news');
+INSERT INTO categories (category) VALUES ('Software reviews');
+INSERT INTO categories (category) VALUES ('Hardware reviews');
+INSERT INTO categories (category) VALUES ('Opinion pieces');
+GO
